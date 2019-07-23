@@ -8,7 +8,7 @@ public class BusTest {
     private Passenger passenger;
 
     @Before
-    public void before() {
+    public void setup() {
         bus = new Bus();
         passenger = new Passenger();
     }
@@ -29,12 +29,13 @@ public class BusTest {
         bus.addPassenger(passenger);
         bus.addPassenger(passenger);
         bus.addPassenger(passenger);
-        assertEquals(false, bus.addPassenger(passenger));
+        assertEquals(2, bus.getNumPassengers());
     }
 
     @Test
     public void removePassenger(){
         bus.addPassenger(passenger);
+        assertEquals(1,bus.getNumPassengers());
         bus.removePassenger(passenger);
         assertEquals(0,bus.getNumPassengers());
 

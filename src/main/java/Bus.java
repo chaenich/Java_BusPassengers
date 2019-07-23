@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Bus {
-
     private String destination;
     private int capacity;
     private ArrayList<Passenger> passengers;
@@ -15,21 +14,16 @@ public class Bus {
         return this.passengers.size();
     }
 
-    public boolean addPassenger(Passenger passenger) {
-        if (getNumPassengers() <= this.capacity) {
+    public void addPassenger(Passenger passenger) {
+        if (getNumPassengers() < this.capacity) {
             passengers.add(passenger);
-            return true;
         }
-        return false;
     }
-
-
-    public boolean removePassenger(Passenger passenger) {
+    
+    public void removePassenger(Passenger passenger) {
 
         if (getNumPassengers() > 0) {
             passengers.remove(0);
-            return true;
         }
-        return false;
     }
 }
